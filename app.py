@@ -62,7 +62,7 @@ with st.container():
         submit_button = st.button("Submit")
         st.markdown('</div>', unsafe_allow_html=True)
 
-    # Load existing data from Flask API
+    # Load existing data from  API
     response = requests.get('http://127.0.0.1:5000/api/data')
     data = response.json()
     df = pd.DataFrame(data)
