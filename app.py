@@ -6,12 +6,14 @@ from streamlit_option_menu import option_menu
 # Set a custom theme using Streamlit's built-in feature
 st.set_page_config(page_title="Personal Finance Manager", page_icon="💰", layout="centered")
 
-# Add custom CSS to enhance styling
+# Add custom CSS to enhance styling and responsiveness
 st.markdown("""
     <style>
     body {
         font-family: 'Arial', sans-serif;
         background-color: #f0f2f6;
+        margin: 0;
+        padding: 0;
     }
     .stButton button {
         background: linear-gradient(90deg, #4CAF50, #45a049);
@@ -23,6 +25,7 @@ st.markdown("""
         border: none;
         cursor: pointer;
         transition: background 0.3s ease;
+        width: 100%;
     }
     .stButton button:hover {
         background: linear-gradient(90deg, #45a049, #4CAF50);
@@ -33,6 +36,7 @@ st.markdown("""
         border: 2px solid #ddd;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         transition: border-color 0.3s, box-shadow 0.3s;
+        width: 100%;
     }
     .stTextInput input:focus, .stDateInput input:focus, .stSelectbox select:focus {
         border-color: #4CAF50;
@@ -44,6 +48,7 @@ st.markdown("""
         border-radius: 12px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         padding: 20px;
+        margin: 10px;
     }
     .css-1d391kg {
         background-color: #FF6347;
@@ -62,7 +67,7 @@ st.markdown("""
     }
     /* Styling for the option menu */
     .nav-link {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: bold;
         color: black;
         border-radius: 8px;
@@ -82,6 +87,34 @@ st.markdown("""
         background-color: #ffffff;
         border-radius: 12px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+    }
+    /* Responsive design */
+    @media (max-width: 768px) {
+        .stButton button {
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+        .stTextInput input, .stDateInput input, .stSelectbox select {
+            padding: 10px;
+            font-size: 14px;
+        }
+        .nav-link {
+            font-size: 14px;
+        }
+    }
+    @media (max-width: 480px) {
+        .stButton button {
+            padding: 8px 16px;
+            font-size: 12px;
+        }
+        .stTextInput input, .stDateInput input, .stSelectbox select {
+            padding: 8px;
+            font-size: 12px;
+        }
+        .nav-link {
+            font-size: 12px;
+        }
     }
     </style>
     """, unsafe_allow_html=True)
